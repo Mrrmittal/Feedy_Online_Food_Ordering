@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -18,4 +21,24 @@ public class Food {
     private Long id;
 
     private String name;
+    private Long price;
+    private String description;
+
+    @ManyToOne
+    private FoodCategory foodCategory;
+
+    @Column(length = 1000)
+    @ElementCollection
+    private List<String> images;
+
+    private boolean isAvailable;
+
+    @ManyToOne
+    private Restaurant restaurant;
+
+    private boolean isVeg;
+    private boolean isSeasonable;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Ingredients> ingredients = new ArrayList<>();
 }

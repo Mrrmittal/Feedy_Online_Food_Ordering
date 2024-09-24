@@ -1,0 +1,25 @@
+
+
+@Food_Amore
+
+Technology we have used:
+
+1.) Java with Spring Boot
+2.) React
+3.) Spring Security
+4.) Spring MVC
+5.) Spring Start Mail
+6.) Json web token
+7.) H2/MySQL Database
+8.) Tailwind CSS
+9.) Redux
+10.) Axios
+11.) MUI(CSS component Lib.)
+12.)Role base access(Role_Customer, Role_Restaurant)
+13.) Stripe Payment Gateway
+
+
+Tools we have used:
+1.) Intellij Idea (Spring Boot)
+2.) VsCode (React)
+3.)

@@ -19,5 +19,7 @@ public class OrderItems {
 
     private Long quantity;
     private Long price;
+
+    @ElementCollection
     private List<String> ingredients;
 }
