@@ -7,13 +7,12 @@ package com.Feedy.dto;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.Columns;
 
 import java.util.List;
 
 @Data
 @Embeddable
-public class RestaurantDTO {
+public class RestaurantDto {
 
     private long id;
     private String title;

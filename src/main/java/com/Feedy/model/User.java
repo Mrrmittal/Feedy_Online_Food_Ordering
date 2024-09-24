@@ -3,6 +3,7 @@ package com.Feedy.model;
 
 import com.Feedy.Enum.OrderStatus;
 import com.Feedy.Enum.UserRole;
+import com.Feedy.dto.RestaurantDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
