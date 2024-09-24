@@ -13,13 +13,27 @@ Technology we have used:
 7.) H2/MySQL Database
 8.) Tailwind CSS
 9.) Redux
-10.) Axios
+10.) Axios (For fetching data from the API)
 11.) MUI(CSS component Lib.)
 12.)Role base access(Role_Customer, Role_Restaurant)
 13.) Stripe Payment Gateway
 
 
 Tools we have used:
+
 1.) Intellij Idea (Spring Boot)
 2.) VsCode (React)
-3.)
+3.) Postman (Test the API)
+
+Models
+
+1.) User
+2.) Restaurant
+3.) Food
+4.) Food Category
+5.) Ingredients
+6.) Event
+7.) Order
+8.) Order Item
+9.) Cart
+10.) Cart Item

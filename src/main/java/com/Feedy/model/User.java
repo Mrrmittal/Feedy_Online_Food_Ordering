@@ -1,6 +1,7 @@
 package com.Feedy.model;
 
 
+import com.Feedy.Enum.OrderStatus;
 import com.Feedy.Enum.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -26,14 +27,15 @@ public class User {
     private String password;
     private UserRole role;
 
-    @JsonIgnore
+    @JsonIgnore  //While fetching all the order we do not need this data. So, it will ignore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer", orphanRemoval = true)
-    private List<Order> order = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
-//    @Embedded
-//    private List<RestaurantDto> favorites;
+    @ElementCollection
+    private List<RestaurantDto> favorites;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();
+    private OrderStatus status;
 
 }

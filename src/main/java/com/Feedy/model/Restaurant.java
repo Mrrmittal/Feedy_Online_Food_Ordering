@@ -24,10 +24,14 @@ public class Restaurant {
     private Long id;
     private String name;
 
+    @OneToOne
     private String owner;
 
     private String description;
     private  String cuisineType;
+
+    @OneToMany
+    private Address address;
 
     @Embedded
     private RestaurantContactInfo contactInfo;

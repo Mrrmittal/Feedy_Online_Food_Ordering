@@ -1,3 +1,8 @@
+/**
+ * Author: Jatin Mittal
+ * Date: 25-09-2024
+ */
+
 package com.Feedy.model;
 
 
@@ -7,28 +12,27 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.lang.annotation.Target;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Ingredients_Table")
-public class Ingredients {
+@Data
+public class IngredientCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private long id;
 
     private String name;
-
-    @ManyToOne
-    private IngredientCategory ingredientCategory;
 
     @JsonIgnore
     @ManyToOne
     private Restaurant restaurant;
 
-    private boolean isAvailable = true;
+    @OneToMany(mappedBy = "Category", cascade = CascadeType.ALL)
+    private List<Ingredients> ingredients = new ArrayList<>();
+
 
 }
