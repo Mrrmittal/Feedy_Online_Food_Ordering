@@ -26,7 +26,7 @@ public class User {
     private String  fullName;
     private String email;
     private String password;
-    private UserRole role;
+    private UserRole role = UserRole.CUSTOMER;
 
     @JsonIgnore  //While fetching all the order we do not need this data. So, it will ignore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer", orphanRemoval = true)
