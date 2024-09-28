@@ -23,7 +23,6 @@ public class RestaurantRequest {
     private Address address;
     private RestaurantContactInfo contactInfo;
     private String openingHours;
-    private LocalDateTime creationDate;
     private List<String> images;
 
 

@@ -23,7 +23,8 @@ public class Restaurant {
     private Long id;
     private String name;
 
-    private String owner;
+    @ManyToOne
+    private User owner;
 
     private String description;
     private  String cuisineType;
