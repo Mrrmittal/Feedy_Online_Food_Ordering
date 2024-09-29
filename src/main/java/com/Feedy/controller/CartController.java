@@ -69,16 +69,16 @@ public class CartController {
         @PostMapping("/delete-cart")
         public ResponseEntity<Cart> removeCart(@RequestHeader("Authorization")
                                                String jwt) throws Exception {
-
-            Cart cart = cartService.clearCart(jwt);
+            User user = userService.findUserByJwtToken(jwt);
+            Cart cart = cartService.clearCart(user.getId());
             return new ResponseEntity<>(cart, HttpStatus.OK);
         }
 
         @GetMapping("/search-cart")
         public ResponseEntity<Cart> searchUserCart(@RequestHeader("Authorization")
                                                String jwt) throws Exception {
-
-            Cart cart = cartService.findUserCart(jwt);
+            User user = userService.findUserByJwtToken(jwt);
+            Cart cart = cartService.findUserById(user.getId());
             return new ResponseEntity<>(cart, HttpStatus.OK);
         }
 

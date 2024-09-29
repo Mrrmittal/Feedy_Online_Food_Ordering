@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -34,7 +35,7 @@ public class Order {
 
     private OrderStatus orderStatus;
 
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Address deliveryAddress;

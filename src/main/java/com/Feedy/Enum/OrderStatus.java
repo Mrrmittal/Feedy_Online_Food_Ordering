@@ -1,13 +1,14 @@
 package com.Feedy.Enum;
 
 public enum OrderStatus {
-    Order_accepted,
-    Food_preparing,
-    Order_pending,
-    Declined,
-    On_the_way,
-    Delivered,
-    Cancel_by_restaurant,
-    Cancel_by_customer,
-    Cancel_by_delivery_agent
+    ORDER_ACCEPTED,
+    FOOD_PREPARING,
+    ORDER_PENDING,
+    DECLINED,
+    ON_THE_WAY,
+    DELIVERED,
+    COMPLETED,
+    CANCEL_BY_RESTAURANT,
+    CANCEL_BY_CUSTOMER,
+    CANCEL_BY_DELIVERY_AGENT
 }
