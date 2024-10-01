@@ -35,7 +35,7 @@ public class Order {
 
     private OrderStatus orderStatus;
 
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Address deliveryAddress;

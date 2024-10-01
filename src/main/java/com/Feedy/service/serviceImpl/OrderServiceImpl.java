@@ -12,11 +12,13 @@ import com.Feedy.request.OrderRequest;
 import com.Feedy.service.CartService;
 import com.Feedy.service.OrderService;
 import com.Feedy.service.RestaurantService;
+
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.crypto.Data;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -69,7 +71,7 @@ public class OrderServiceImpl implements OrderService {
         // Initialize the order
         Order createdOrder = new Order();
         createdOrder.setCustomer(user);
-        createdOrder.setCreatedAt(new Date());
+        createdOrder.setCreatedAt(LocalDateTime.now());
         createdOrder.setOrderStatus(OrderStatus.ORDER_PENDING);
         createdOrder.setDeliveryAddress(savedAddress);
         createdOrder.setRestaurant(restaurant);
@@ -134,7 +136,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getUsersOrder(Long userId) throws Exception {
-        return orderRepo.findByUserId(userId);
+        User user = userRepo.findById(userId).orElseThrow(() -> new Exception("User not found"));
+        return orderRepo.findByCustomer(user);
     }
 
     @Override
